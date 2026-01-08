@@ -18,25 +18,32 @@ _使用 GitHub Pages 将你的仓库变成一个网站或博客。_
 </header>
 
 <!--
-  <<< Author notes: Step 5 >>>
-  Start this step by acknowledging the previous step.
-  Define terms and link to docs.github.com.
+  <<< Author notes: Finish >>>
+  Review what we learned, ask for feedback, provide next steps.
 -->
 
-## Step 5: 合并你的 Pull Request
+## 课程完成 
 
-_干的漂亮 :heart:! 大家很快就能阅读您的博客!_
+_恭喜你，朋友！你已经顺利完成了本课程！_
 
-现在你可以[合并（merge）](https://docs.github.com/en/get-started/quickstart/github-glossary#merge)你的 Pull Request 了！
+<img src="https://octodex.github.com/images/constructocat2.jpg" alt="celebrate" width="300" align="right">
 
-### :keyboard: 实操环节：合并你的修改
+你的网站现在已经上线并成功部署啦！🚀
 
-1. 将 `my-pages` 分支中的修改合并到 `main` 分支。
+下面是你在本课程中完成的全部任务回顾：
 
-    * 如果你在第二步中已经创建过 Pull Request，只需打开该 PR，然后点击 **Merge pull request（合并请求）** 按钮。
-    * 如果之前还没有创建 Pull Request，可以现在按照 [第二步](/.github/steps/2-configure-your-site.md) 中的说明创建一个。
-2. （可选）合并后，可以删除 `my-pages` 分支。
-3. 等待大约 20 秒，然后刷新本页面。[GitHub Actions](https://docs.github.com/en/actions) 会自动识别你已完成此步骤，并跳转到下一步。
+* ✅ 启用了 GitHub Pages
+* 🎨 在配置文件中选择了网站主题
+* 📁 学习了 Jekyll 的目录结构与命名规范
+* ✍️ 创建了你的第一篇 Jekyll 博客文章
+
+### 接下来可以做什么？
+
+* 继续完善你的 GitHub Pages 网站——我们很期待看到你的创作！
+* 欢迎在 [讨论区](https://github.com/orgs/skills/discussions/categories/github-pages) 分享你对本课程的想法。
+* 继续学习，尝试更多 [GitHub Skills 课程](https://github.com/skills)。
+* 阅读 [GitHub 入门文档](https://docs.github.com/en/get-started)，深入了解更多功能。
+* 想找项目参与？可以逛逛 [GitHub Explore](https://github.com/explore) 发现有趣的开源项目。
 
 <footer>
 
