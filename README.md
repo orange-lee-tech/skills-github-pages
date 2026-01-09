@@ -1,61 +1,72 @@
-<header>
+![Github Forks](https://img.shields.io/github/forks/Yixin0313/personal-homepage-template?style=flat)
+![Github Stars](https://img.shields.io/github/stars/Yixin0313/personal-homepage-template?style=flat)
+![License](https://img.shields.io/github/license/Yixin0313/personal-homepage-template)
 
-<!--
-  <<< Author notes: Course header >>>
-  Include a 1280×640 image, course title in sentence case, and a concise description in emphasis.
-  In your repository settings: enable template repository, add your 1280×640 social image, auto delete head branches.
-  Add your open source license, GitHub uses MIT license.
--->
+# 通用个人主页模板：适用于学术和求职场景 | A general-purpose template: suitable for both academic and professional use.
 
-[English](https://github.com/skills/github-pages) | 中文
+## 预览 | Preview
+[![Screenshot of the Website](https://raw.githubusercontent.com/Yixin0313/personal-homepage-template/main/screenshot_full.png)](https://yixin0313.github.io/personal-homepage-template/)
 
-> 本课程翻译自 Github Skills，全部课程请点击 [这里查看](https://www.github-zh.com/getting-started)
+## 介绍 | Introduction
 
-# GitHub Pages
+这是一个**通用的个人主页模板**，基于 [Sen Li 的学术主页模板](https://github.com/senli1073/senli1073.github.io) 进行修改。  
 
-_使用 GitHub Pages 将你的仓库变成一个网站或博客。_
+我新增了**工作经历板块**，使其更加适用于程序员和求职者。并且使用了中英文对照版本。
 
-</header>
+This is a **general-purpose personal website template**, modified from [Sen Li's academic template](https://github.com/senli1073/senli1073.github.io).  
 
-<!--
-  <<< Author notes: Finish >>>
-  Review what we learned, ask for feedback, provide next steps.
--->
+I have added a **work experience section**, making it more practical for programmers and job seekers.
 
-## 课程完成 
+Bilibili教程视频：【【2025最新保姆级教程】手把手教你用github制作个人主页（申学找工作必备）】https://www.bilibili.com/video/BV16nNMeFEzm?vd_source=79b688b1a191b9f9e8204aa1c3d0adab
 
-_恭喜你，朋友！你已经顺利完成了本课程！_
+CSDN教程：https://blog.csdn.net/qq_45743991/article/details/145505150?spm=1001.2014.3001.5502
 
-<img src="https://octodex.github.com/images/constructocat2.jpg" alt="celebrate" width="300" align="right">
+## 快速开始 | Getting Start
+### 1. Fork 该仓库 | Fork this repository
+仓库名称应命名为 `<用户名>.github.io`，这样你的个人网站地址将是 `https://<用户名>.github.io/`。
 
-你的网站现在已经上线并成功部署啦！🚀
+The repository name should be `<username>.github.io`, which will also be your website's URL.
 
-下面是你在本课程中完成的全部任务回顾：
 
-* ✅ 启用了 GitHub Pages
-* 🎨 在配置文件中选择了网站主题
-* 📁 学习了 Jekyll 的目录结构与命名规范
-* ✍️ 创建了你的第一篇 Jekyll 博客文章
+### 2.  编辑页面内容 | Edit page content
+(1) 进入你想存放项目的文件夹，并克隆新的仓库 | Go to the folder where you want to store your project, and clone the new repository:
+```
+git clone https://github.com/<username>/<username>.github.io.git
+```
+项目的目录结构如下 | The directory structure is as follows:
 
-### 接下来可以做什么？
+```.
+.
+├── contents
+└── static
+    ├── assets
+    │   └── img
+    ├── css
+    └── js
+```
 
-* 继续完善你的 GitHub Pages 网站——我们很期待看到你的创作！
-* 欢迎在 [讨论区](https://github.com/orgs/skills/discussions/categories/github-pages) 分享你对本课程的想法。
-* 继续学习，尝试更多 [GitHub Skills 课程](https://github.com/skills)。
-* 阅读 [GitHub 入门文档](https://docs.github.com/en/get-started)，深入了解更多功能。
-* 想找项目参与？可以逛逛 [GitHub Explore](https://github.com/explore) 发现有趣的开源项目。
+(2) 修改各个板块的内容 | Modify the content of each section, which corresponds to `contents/*.md`.
 
-<footer>
+(3) 调整网站设置 | Adjust the title, copyright information, and other text of the website in `contents/config.yml`
 
-<!--
-  <<< Author notes: Footer >>>
-  Add a link to get support, GitHub status page, code of conduct, license link.
--->
+(4) 替换图片 | Replace background image and photo with new ones for your web pages in `static/assets/img/`
 
----
+(5) 提交更改 | Push it: 
+```
+git commit -am 'init'
+git push
+```
 
-Get help: [Post in our discussion board](https://github.com/orgs/skills/discussions/categories/github-pages) &bull; [Review the GitHub status page](https://www.githubstatus.com/)
 
-&copy; 2023 GitHub &bull; [Code of Conduct](https://www.contributor-covenant.org/version/2/1/code_of_conduct/code_of_conduct.md) &bull; [MIT License](https://gh.io/mit)
+### 3. 访问你的网站 | Enjoy
 
-</footer>
+打开浏览器，访问 https://<用户名>.github.io，即可查看你的个人主页
+
+Fire up a browser and go to `https://<username>.github.io`
+
+
+
+## License
+本项目基于 MIT 许可协议，你可以自由使用和修改此模板。 Yixin Huang 2025年2月7号
+
+Copyright Yixin Huang, 2025. Licensed under an MIT license. You can copy and mess with this template.
