@@ -179,3 +179,16 @@ section .main-body{
   position: relative;
   z-index: 3;
 }
+
+/* ===== FIX: Bootstrap .carousel-item conflict inside our horizontal track ===== */
+#show-track .carousel-item{
+  display: block !important;
+  float: none !important;
+  width: auto !important;
+  margin-right: 0 !important;
+  transform: none !important;
+  position: relative !important;
+}
+#show-track .carousel-item.active{
+  display: block !important;
+}

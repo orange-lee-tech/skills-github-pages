@@ -1,28 +1,21 @@
-<!-- DOCTYPE 声明：指定文档类型为 HTML5，确保浏览器正确渲染。 -->
 <!DOCTYPE html>
-<!-- 打开 html 标签：定义 HTML 文档的根元素，lang 属性设置为英语以提高可访问性。 -->
+<html lang="en">
 
 <head>
-    <!-- Head 部分：包含文档的元数据，不在页面上可见。 -->
-    <meta charset="utf-8" /> <!-- Meta charset：设置字符编码为 UTF-8，以正确显示文本。 -->
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <!-- Meta viewport：控制移动设备上的布局，设置初始缩放和宽度。 -->
     <meta name="description" content="Academic Webpage" />
-    <!-- Meta description：为搜索引擎提供页面的简要摘要。 -->
-    <meta name="author" content="yixin0313" /> <!-- Meta author：指定页面的作者。 -->
-    <title id="title"></title> <!-- Title 标签：设置页面标题，通过 id 允许 JavaScript 动态更改。 -->
+    <meta name="author" content="yixin0313" />
+    <title id="title"></title>
 
     <!-- Icon -->
     <link rel="icon" type="image/x-icon" href="static/assets/favicon.ico" />
-    <!-- Icon 链接：定义浏览器标签页中的小图标（favicon）。 -->
 
     <!-- Bootstrap icons-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
-    <!-- Bootstrap icons：从 CDN 加载图标库，用于页面中的图标。 -->
 
     <!-- Google fonts-->
     <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <!-- Google fonts：预连接到 Google Fonts 以加快加载，然后加载特定的字体家族。 -->
     <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,600;1,600&amp;display=swap"
         rel="stylesheet" />
     <link
@@ -33,17 +26,11 @@
 
     <!-- Core theme CSS (includes Bootstrap)-->
     <link type="text/css" href="static/css/styles.css" rel="stylesheet" />
-    <link type="text/css" href="static/css/main.css?v=20260110_1" rel="stylesheet" />
-    <script type="text/javascript" src="static/js/scripts.js?v=20260110_1"></script>
+    <link type="text/css" href="static/css/main.css" rel="stylesheet" />
 
-    <!-- Bootstrap core JS：加载 Bootstrap JavaScript 以实现交互组件。 -->
-    <!-- Polyfill：在旧浏览器中添加对现代 JavaScript 功能的兼容性支持。 -->
-
+    <!-- Bootstrap core JS-->
+    <!-- For Compatability -->
     <!-- Markdown -->
-    <script type="text/javascript" src="static/js/bootstrap.bundle.min.js"></script>
-    <script type="text/javascript" src="static/js/marked.min.js"></script>
-    <!-- Markdown 库：加载 Marked.js 以解析 Markdown 内容。 -->
-
     <!-- Mathematics -->
     <script>
         // See https://docs.mathjax.org/en/latest/index.html for more details.
@@ -77,36 +64,27 @@
     </script>
     <script type="text/javascript" id="MathJax-script"
         src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+    <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
     <!-- Core JS-->
-    <script type="text/javascript" src="static/js/js-yaml.min.js"></script>
-    <!-- Core JS：加载自定义 JavaScript 文件以实现页面功能。 -->
-
-    <!-- 关闭 head 标签。 -->
-</head>
-
-<!-- Body 部分：包含页面上可见的内容。 -->
+    </head>
 
 <body id="page-top">
     <!-- Navigation-->
     <nav class="header navbar navbar-expand-lg navbar-light fixed-top shadow-sm" id="mainNav">
         <div class="container px-5">
-            <!-- 品牌链接：Logo 或标题链接，通过 id 允许动态内容。 -->
             <a id="page-top-title" class="navbar-brand fw-bold" href="#page-top"></a>
-            <!-- 注释掉的图像：替代 Logo，目前禁用。 -->
             <!-- <a href="#page-top"><img src="static/assets/img/CUMT_LOGO.svg" style="width: 11rem;"></a> -->
-            <!-- 切换按钮：移动视图的汉堡菜单。 -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
                 aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 MENU
                 <i class="bi-list"></i>
             </button>
-            <!-- 可折叠菜单：导航链接，在小屏幕上折叠。 -->
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto me-4 my-3 my-lg-0">
-                    <!-- 导航项：指向页面部分的链接。 -->
                     <li class="nav-item">
-                        <a class="nav-link me-lg-3" href="#page-top">HOME</a>
+                        <a class="nav-link me-lg-3" href="#home">HOME</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link me-lg-3" href="#awards">AWARDS</a>
@@ -126,106 +104,72 @@
     <section class="top-section" style="background-image: url('static/assets/img/background.jpeg');">
         <div class="top-section-content">
             <div class="container px-5">
-                <!-- 背景文本：大标题，可能动态设置。 -->
                 <h2 id="top-section-bg-text" class="text-white display-3 lh-1 font-alt"></h2>
             </div>
         </div>
     </section>
-    <!-- 顶部部分的结束。 -->
+    <!-- Top Section -->
 
-    <!-- 照片部分：个人资料图像的容器。 -->
+    <!-- Photo -->
     <div class="container px-5">
         <div id="avatar">
-            <!-- 个人资料图像：显示用户的照片，并带有阴影。 -->
             <img class="shadow" src="static/assets/img/photo.png">
         </div>
     </div>
-    <!-- 照片部分的结束。 -->
+    <!-- Photo -->
 
-    <!-- Show Carousel -->
-    <section class="bg-gradient-primary-to-secondary-light mt5 md5" id="show">
-      <div class="container px-5">
-        <header>
-          <h2 id="show-subtitle"><i class="bi bi-stars"></i>&nbsp;SHOW</h2>
-        </header>
-
-        <div class="carousel-row">
-          <button class="carousel-btn" data-action="prev" data-target="show-track" aria-label="Previous">‹</button>
-          <div class="carousel-track" id="show-track"></div>
-          <button class="carousel-btn" data-action="next" data-target="show-track" aria-label="Next">›</button>
-        </div>
-      </div>
-    </section>
-    <!-- Show Carousel -->
-
-    <!-- 主页部分：主页信息的主体内容区域。 -->
+    <!-- Home -->
     <section class="bg-gradient-primary-to-secondary-light mt5 md5" id="home">
         <div class="container px-5">
             <header>
-                <!-- 副标题：部分标题，可能动态设置。 -->
                 <h2 id="home-subtitle"> </h2>
-                <!-- 注释掉的图标：可选图标，目前禁用。 -->
                 <!-- <span class="bi bi-list"></span> -->
             </header>
-            <!-- 主体内容：动态加载的内容，可能来自 Markdown。 -->
             <div class="main-body" id="home-md"></div>
         </div>
     </section>
-    <!-- 主页部分的结束。 -->
+    <!-- Home -->
 
-    <!-- 奖项部分：显示奖项信息。 -->
+    <!-- Awards -->
     <section class="bg-gradient-primary-to-secondary-light mt5 md5" id="awards">
         <div class="container px-5">
             <header>
-                <!-- 带图标的副标题：奖项部分的标题。 -->
                 <h2 id="awards-subtitle"><i class="bi bi-award-fill"></i>AWARDS </h2>
             </header>
-            <!-- 主体内容：奖项的动态内容。 -->
             <div class="main-body" id="awards-md"></div>
 
         </div>
     </section>
-    <!-- 奖项部分的结束。 -->
+    <!-- Awards -->
 
-    <!-- 经验部分：显示专业经验。 -->
+    <!-- Experience -->
     <section class="bg-gradient-primary-to-secondary-dark mt5 md5" id="experience">
         <div class="container px-5">
             <header>
-                <!-- 带图标的副标题：经验部分的标题。 -->
                 <h2 id="experience-subtitle"><i class="bi bi-briefcase-fill"></i> EXPERIENCE </h2>
             </header>
-            <!-- 主体内容：经验的动态内容。 -->
             <div class="main-body" id="experience-md"></div>
         </div>
     </section>
-    <!-- 经验部分的结束。 -->
+    <!-- Experience -->
 
-    <!-- 出版物部分：显示出版物列表。 -->
+    <!-- Publications -->
     <section class="bg-gradient-primary-to-secondary-gray mt5 md5" id="publications">
         <div class="container px-5">
             <header>
-                <!-- 带图标的副标题：出版物部分的标题。 -->
                 <h2 id="publications-subtitle"><i class="bi bi-file-text-fill"></i>&nbsp;PUBLICATIONS</h2>
             </header>
-            <!-- 主体内容：出版物的动态内容。 -->
             <div class="main-body" id="publications-md"></div>
 
         </div>
     </section>
-    <!-- 出版物部分的结束。 -->
+    <!-- Publications  -->
 
-    <!-- Footer：底部部分，包含链接和信息。 -->
+    <!-- Footer-->
     <footer class="bg-bottom text-center py-5">
         <div class="container px-5">
             <div class="text-white-50 small">
-                <!-- 二维码：显示主页的二维码图像。 -->
-                <div id="qrcode" class="mb-3">
-                    <img src="static/assets/img/Homepages%20QR%20code.png" alt="Homepage QR Code"
-                        style="width:140px;height:auto;" />
-                </div>
-                <!-- 版权文本：可能动态设置。 -->
                 <div id="copyright-text" class="mb-2"></div>
-                <!-- 链接：Github 和许可证链接。 -->
                 <a id="github-link" href="https://github.com/senli1073">Github</a>
                 <span class="mx-1">&middot;</span>
                 <a id="license-link"
@@ -234,9 +178,13 @@
         </div>
     </footer>
 
-    <!-- 关闭 body 标签。 -->
+    <!-- JS dependencies (order matters) -->
+    <script type="text/javascript" src="static/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="static/js/marked.min.js"></script>
+    <script type="text/javascript" src="static/js/js-yaml.min.js"></script>
+
+    <!-- Site script (cache-busted) -->
+    <script type="text/javascript" src="static/js/scripts.js?v=20260110_2"></script>
+
 </body>
-
-<!-- 关闭 html 标签。 -->
-
 </html>
