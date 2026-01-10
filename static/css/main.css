@@ -18,7 +18,7 @@
     */
     --show-img-max-h: 460px;   /* 主图最大高度（不改变图片，只是允许它完整显示） */
     --show-top: 10px;          /* 图片离 track 顶部的距离 */
-    --show-extra: 460px;       /* 额外留白：取“主图最大高度”级别，等效把容器高度翻倍 */
+    --show-extra: 120px;       /* 额外留白：取“主图最大高度”级别，等效把容器高度翻倍 */
     --show-shift-x: 260px;     /* 左右预告图水平偏移 */
     --show-scale-side: .82;    /* 左右预告图缩放比例 */
     --show-side-opacity: .55;  /* 左右预告图透明度 */
@@ -207,7 +207,7 @@ section .main-body{
 @media (max-width: 991px){
   :root{
     --show-img-max-h: 360px;
-    --show-extra: 360px;   /* 同步翻倍扩容 */
+    --show-extra: 90px;   /* 同步翻倍扩容 */
     --show-shift-x: 140px; /* 窄屏降低左右偏移 */
   }
 }
