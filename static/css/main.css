@@ -1,19 +1,40 @@
 @import "./styles.css";
 
+/* =========================================================
+   站点主样式（main.css）
+   目标：
+   1) 清理历史遗留/被覆盖的样式，降低维护成本
+   2) 轮播（SHOW）容器高度加大，确保图片完整展示
+   3) 关键位置补中文注释，便于后续协作开发
+   ========================================================= */
 
+/* ---------- 全局变量（站点主色） ---------- */
 :root{
-    --h-title-color:#3948d2;
+    --h-title-color:#3948d2; /* 标题蓝 */
+
+    /* ===== SHOW 轮播关键参数（只调这里即可） =====
+       说明：图片本体大小不改，只扩容器高度，避免“下半截被裁”。
+       你如果后续换更高的图片，可继续把 --show-img-max-h 调大。
+    */
+    --show-img-max-h: 460px;   /* 主图最大高度（不改变图片，只是允许它完整显示） */
+    --show-top: 10px;          /* 图片离 track 顶部的距离 */
+    --show-extra: 460px;       /* 额外留白：取“主图最大高度”级别，等效把容器高度翻倍 */
+    --show-shift-x: 260px;     /* 左右预告图水平偏移 */
+    --show-scale-side: .82;    /* 左右预告图缩放比例 */
+    --show-side-opacity: .55;  /* 左右预告图透明度 */
 }
 
+/* ---------- 导航栏与页脚 ---------- */
 .header {
     border-bottom: solid 2px var(--bs-blue);
-    z-index: 10000;
+    z-index: 10000; /* 确保导航始终在最上层 */
 }
 
 .bg-bottom {
     background-color: var(--h-title-color);
 }
 
+/* ---------- 顶部封面（背景图） ---------- */
 .top-section {
     position: relative;
     padding: 10rem 0;
@@ -22,27 +43,26 @@
     height: 25rem;
 }
 
-.top-section h2 {
-    font-weight: 400;
-}
+.top-section h2 { font-weight: 400; }
 
 .top-section .top-section-content {
     position: relative;
-    z-index: 1;
+    z-index: 1; /* 文字在遮罩层之上 */
 }
 
+/* 顶部封面遮罩：提升文字可读性 */
 .top-section:before {
     content: "";
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
     background: rgba(0, 0, 0, 0.5);
 }
 
+/* ---------- 各 section 标题与正文排版 ---------- */
 section header h2{
-    font-family: "Kanit", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
+    font-family: "Kanit", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+                 Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
     color: var(--h-title-color);
     font-size: 2.3rem;
     line-height: 4rem;
@@ -54,44 +74,19 @@ section .main-body{
     line-height: 2.4rem;
 }
 
-
+/* 背景渐变（浅色/灰色） */
 .bg-gradient-primary-to-secondary-light {
     background: linear-gradient(45deg, #fcfcfc, #ffffff) !important;
 }
-
 .bg-gradient-primary-to-secondary-gray {
     background: linear-gradient(45deg, #f0f0f0, #f1f1f1) !important;
 }
 
-
-
-.on-top {
-    position: relative;
-    z-index: 10000;
-}
-
-.top-bg {
-    background-position: center;
-    background-size: fill;
-    width: 100%;
-    height: 100%;
-}
-
-.top-bg::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.4);
-}
-
-
+/* ---------- 头像（浮在封面之下、右侧） ---------- */
 #avatar {
     position: relative;
-    height: 0;
-    top:min(-65px,max(-100px,calc(-1*100vw/12)));
+    height: 0; /* 让头像“浮”在文档流之上 */
+    top: min(-65px, max(-100px, calc(-1*100vw/12)));
     max-width: 55em;
     margin: 0 1.5rem 0 0;
     float: right;
@@ -99,17 +94,18 @@ section .main-body{
 }
 
 #avatar img {
-    height: max(130px,min(200px,calc(100vw/6)));
+    height: max(130px, min(200px, calc(100vw/6)));
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
 }
 
 @media screen and (max-width: 991px) {
-    #avatar {
-        margin: 0;
-    }
+    #avatar { margin: 0; }
 }
 
-/* --- Carousel Row (Show/Person) --- */
+/* =========================================================
+   轮播通用结构（按钮 + track）
+   说明：.carousel-track 在 HTML 里作为容器类名复用（SHOW / PERSON 都能用）
+   ========================================================= */
 .carousel-row{
   position: relative;
   display: flex;
@@ -117,32 +113,7 @@ section .main-body{
   gap: 12px;
 }
 
-.carousel-track{
-  flex: 1;
-  display: flex;
-  gap: 14px;
-  overflow-x: auto;
-  padding: 6px 2px;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
-  -ms-overflow-style: none;   /* IE/Edge */
-  scrollbar-width: none;      /* Firefox */
-}
-.carousel-track::-webkit-scrollbar{ display:none; }
-
-.carousel-item{
-  flex: 0 0 auto;
-  scroll-snap-align: start;
-}
-
-.carousel-item img{
-  width: 240px;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 14px;
-  box-shadow: 0 10px 24px rgba(0,0,0,.18);
-}
-
+/* 左右按钮（可复用到 person-track） */
 .carousel-btn{
   border: 0;
   width: 38px;
@@ -157,146 +128,40 @@ section .main-body{
 }
 .carousel-btn:hover{ background: rgba(255,255,255,1); }
 
-/* ===== Force carousel visible ===== */
-#show-track.carousel-track{
-  min-height: 170px;
-  align-items: center;
+/* track 的基础属性：作为绝对定位的参照系 */
+.carousel-track{
+  position: relative;
+  flex: 1;
 }
 
-#show-track .carousel-item img{
-  display: block;
-  width: 240px;
-  height: 150px;
-  object-fit: cover;
-}
-
+/* =========================================================
+   SHOW：三张堆叠轮播（prev / active / next）
+   - 中间：主图（active）
+   - 左右：预告图（prev / next）小一些、在后面
+   - 本次只做“扩容器高度”，不动图片大小/比例
+   ========================================================= */
 #show{
   position: relative;
   z-index: 2;
 }
 
 #show-track{
-  position: relative;
   z-index: 3;
+  /* 关键：容器高度 = 主图最大高度 + 顶部偏移 + 额外留白（相当于翻倍扩容） */
+  min-height: calc(var(--show-img-max-h) + var(--show-top) + var(--show-extra));
 }
 
-/* ===== FIX: Bootstrap .carousel-item conflict inside our horizontal track ===== */
-#show-track .carousel-item{
-  display: block !important;
-  float: none !important;
-  width: auto !important;
-  margin-right: 0 !important;
-  transform: none !important;
-  position: relative !important;
-}
-#show-track .carousel-item.active{
-  display: block !important;
-}
-/* ===== Single-item carousel (SHOW) ===== */
-
-#show-track .carousel-item-single{
-  display: none;
-}
-
-#show-track .carousel-item-single.active{
-  display: block;
-}
-
-#show-track .carousel-item-single img{
-  width: min(820px, 92vw);
-  height: 320px;
-  object-fit: cover;
-  border-radius: 18px;
-  box-shadow: 0 14px 30px rgba(0,0,0,.18);
-  margin: 0 auto;   /* 居中 */
-}
-/* ===== SHOW: stacked 3-item carousel (prev / active / next) ===== */
-#show-track{
-  position: relative;
-  min-height: 720px;  /* 给绝对定位留高度 */
-}
-
+/* 单张 item：绝对定位叠放 */
 #show-track .carousel-item-single{
   display: none;
   position: absolute;
-  top: 10px;
+  top: var(--show-top);
   left: 50%;
   transform: translateX(-50%);
   transition: transform .28s ease, opacity .28s ease;
 }
 
-/* 三张可见 */
-#show-track .carousel-item-single.prev,
-#show-track .carousel-item-single.active,
-#show-track .carousel-item-single.next{
-  display: block;
-}
-
-/* 主图在最上层 */
-#show-track .carousel-item-single.active{
-  z-index: 3;
-  opacity: 1;
-  transform: translateX(-50%) scale(1);
-}
-
-/* 左右“预告图”在后面、更小、略透明，并且左右偏移 */
-#show-track .carousel-item-single.prev{
-  z-index: 2;
-  opacity: .55;
-  transform: translateX(calc(-50% - 260px)) scale(.82);
-}
-
-#show-track .carousel-item-single.next{
-  z-index: 2;
-  opacity: .55;
-  transform: translateX(calc(-50% + 260px)) scale(.82);
-}
-
-/* 图片本体：不锁死宽度，只给一个上限更稳 */
-#show-track .carousel-item-single img{
-  display: block;
-  max-width: min(900px, 92vw);  /* 尊重原图宽高比例，给上限防止过大 */
-  max-height: 460px;            /* 让布局稳定，不会一张竖图把页面撑爆 */
-  width: auto;
-  height: auto;
-  border-radius: 18px;
-  box-shadow: 0 14px 30px rgba(0,0,0,.18);
-  margin: 0 auto;
-  object-fit: contain;          /* 尊重原图，不裁切 */
-}
-@media (min-width: 992px){
-  #show-track{ min-height: 520px; }
-  #show-track .carousel-item-single img{ max-height: 460px; }
-}
-
-@media (max-width: 991px){
-  #show-track{ min-height: 420px; }
-  #show-track .carousel-item-single img{ max-height: 360px; }
-}
-/* ===== SHOW (stacked) - force full image visible ===== */
-:root{
-  --showH: 420px;          /* 主图显示高度：你想更大就 460/520 */
-  --showTop: 60px;         /* 主图离容器顶部距离 */
-  --showShiftX: 260px;     /* 左右预告图横向偏移 */
-}
-
-#show-track{
-  position: relative !important;
-  overflow: visible !important;
-  min-height: calc(var(--showH) + var(--showTop) + 80px) !important;  /* 关键：留足空间 */
-}
-
-/* 三张叠放容器 */
-#show-track .carousel-item-single{
-  display: none;
-  position: absolute;
-  top: var(--showTop);
-  left: 50%;
-  transform: translateX(-50%);
-  transition: transform .28s ease, opacity .28s ease;
-}
-
-/* prev/active/next 可见 */
+/* 三张可见：prev / active / next */
 #show-track .carousel-item-single.prev,
 #show-track .carousel-item-single.active,
 #show-track .carousel-item-single.next{
@@ -310,26 +175,39 @@ section .main-body{
   transform: translateX(-50%) scale(1);
 }
 
-/* 左右预告图：更小、更透明、在后面 */
+/* 左右预告图 */
 #show-track .carousel-item-single.prev{
   z-index: 2;
-  opacity: .55;
-  transform: translateX(calc(-50% - var(--showShiftX))) scale(.82);
+  opacity: var(--show-side-opacity);
+  transform: translateX(calc(-50% - var(--show-shift-x))) scale(var(--show-scale-side));
 }
 #show-track .carousel-item-single.next{
   z-index: 2;
-  opacity: .55;
-  transform: translateX(calc(-50% + var(--showShiftX))) scale(.82);
+  opacity: var(--show-side-opacity);
+  transform: translateX(calc(-50% + var(--show-shift-x))) scale(var(--show-scale-side));
 }
 
-/* 关键：固定展示框 + contain，保证“永远完整显示、不裁切” */
+/* 图片本体：
+   - 不锁死宽度，保留自适应（靠 max-* 控制上限，避免撑爆）
+   - object-fit: contain 保证完整展示（不裁切）
+*/
 #show-track .carousel-item-single img{
-  width: min(920px, 92vw);     /* 自适应，但有上限，防止撑爆屏幕 */
-  height: var(--showH);        /* 固定高度：保证完整可控 */
-  object-fit: contain;         /* 永远完整显示，不裁切 */
-  background: rgba(255,255,255,.0);
+  display: block;
+  max-width: min(900px, 92vw);
+  max-height: var(--show-img-max-h);
+  width: auto;
+  height: auto;
   border-radius: 18px;
   box-shadow: 0 14px 30px rgba(0,0,0,.18);
-  display: block;
   margin: 0 auto;
+  object-fit: contain;
+}
+
+/* 响应式：窄屏略缩减上限高度与左右偏移 */
+@media (max-width: 991px){
+  :root{
+    --show-img-max-h: 360px;
+    --show-extra: 360px;   /* 同步翻倍扩容 */
+    --show-shift-x: 140px; /* 窄屏降低左右偏移 */
+  }
 }
