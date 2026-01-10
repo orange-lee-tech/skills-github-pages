@@ -411,3 +411,31 @@ section .main-body{
   .md-grid{ grid-template-columns: 1fr; }
   .md-kpi{ grid-template-columns: 1fr; }
 }
+/* Desktop：让 md-grid 的两张主卡片等高（子卡片不受影响） */
+@media (min-width: 992px){
+  .md-grid{
+    align-items: stretch; /* 覆盖 start */
+  }
+  .md-grid > .md-card{
+    height: 100%;
+  }
+}
+/* 科研/竞赛：卡片网格 */
+.cards-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  align-items: stretch;
+}
+.cards-grid > .md-card{ height: 100%; }
+
+.card-meta{
+  margin-top: -6px;
+  margin-bottom: 10px;
+  font-size: .92rem;
+  opacity: .75;
+}
+
+@media (max-width: 992px){
+  .cards-grid{ grid-template-columns: 1fr; }
+}
