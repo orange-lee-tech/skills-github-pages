@@ -1,21 +1,26 @@
-### **Software Engineer Intern**  
-**January 2025 – June 2025 | ByteDance**  
+# 学生工作
 
-Worked on the development and optimization of large-scale recommendation systems, focusing on algorithm improvements and system efficiency enhancements. Contributed to real-time data processing pipelines and model optimization for personalized content delivery.
+## 中南大学能源科学与工程学院学工办｜见习文员（2024/4–2025/11）
+- 对接教务、综合办、辅导员等部门，保证事务按期交付  
+- 负责学工办助理微信运营与学生档案分管  
+- 参与“学长的火炬”项目：学院排名全校第4（2024）；全校第2（2025）
 
-#### Key Contributions:  
-- Developed and optimized recommendation algorithms to enhance user engagement and content relevance.  
-- Designed and implemented real-time data processing workflows to improve model inference efficiency.  
-- Conducted A/B testing and performance analysis to refine recommendation strategies based on user behavior data.  
+# 企业实习
 
----
+## 昆明上维设计品牌有限公司｜平面设计师（实习，2023/12–2024/2）
+- 熟练使用 Adobe Illustrator；参与客户需求对接  
+- 完成 4 份设计作品并取得实习证明；目前累计作品约 10 个
 
-### **软件工程师实习生**  
-**2025年1月 – 2025年6月 | 字节跳动**  
+# 社会实践与志愿服务（精选）
 
-负责大规模推荐系统的开发与优化，专注于算法改进和系统效率提升。参与实时数据处理管道的构建，并优化模型推理流程，以提升个性化内容推荐效果。
+## 母校联合宣讲｜主持｜昆明市第一中学西山学校（2023/12–2024/1）
+- 组织 17 所大学宣讲队伍联动；完成招生办宣讲目标  
+- 在中南大学获评优秀，2 学分认定，次年录取率同比增长 288%
 
-#### 主要贡献:  
-- 研发并优化推荐算法，提高用户互动率和内容相关性。  
-- 设计并实现实时数据处理流程，提升模型推理的计算效率。  
-- 进行A/B测试与性能分析，基于用户行为数据优化推荐策略。
+## 湖南百公里｜招募组校区负责人（2023/10–2024/10）
+- 三届活动沉淀：招募志愿者 31 人次；线上触达累计 467 人次  
+- 省级优秀志愿者 2 次
+
+## 太阳慈善公益基金会｜太阳学子（2023/11 至今）
+- 童行伙伴优秀志愿者二等奖；累计志愿时长 91h  
+- 小问号 weekend 科学课题组组长：组织培训、选拔、课程包交付与结项表彰

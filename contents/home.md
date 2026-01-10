@@ -1,21 +1,18 @@
 [![GitHub](https://img.shields.io/badge/orange--lee--tech-github-blue?logo=github)](https://github.com/orange-lee-tech)
 
-welcome to my homepage!
+欢迎来到我的个人主页！
 
-I'm currently pursuing a Master's degree in XX at the Department of XX, XX University, XX.
+# 现状
 
-#### Email  
+- 本科在读：中南大学（985）｜能源动力与工程｜预计 2027 年毕业  
+- 本科交换：元智大学（TOP12）｜机械工程（英授）｜拟录取，2026 春季学期  
+- 近期主线：面向不可压流体方程的物理约束增强神经算子（Neural Chorin）研究与实验验证
 
-<code>1010969261@qq.com</code>  
+# 教育背景
 
-#### Education  
-**Central South University**,   School of Energy Science and Engineering,undergraduate of Energy and Power Engineering(2023 – 2027)  
+- **中南大学**｜能源动力与工程（本科）｜2027  
+- **元智大学**｜机械工程（交换，英授）｜2026 春季（拟录取）
 
-**Yuan Ze University**, Exchange student <br>  
-• As a XX, represented my college as an outstanding student for a XX exchange program.  Mechanical Engineering Department
+# 联系方式
 
-**XX University**, Honours Bachelor of XX (XX – XX)  
-• GPA: XX/XX (top XX%)  
-
-#### Research Interests  
-XX, XX, XX, XX.
+- Email：1010969261@qq.com
