@@ -24,8 +24,18 @@ function initCarouselSingle({ trackId, imgDir, files, intervalMs }) {
   let idx = 0;
 
   const render = () => {
-    items.forEach((el, i) => el.classList.toggle('active', i === idx));
-  };
+  const n = items.length;
+  const prevIdx = (idx - 1 + n) % n;
+  const nextIdx = (idx + 1) % n;
+
+  items.forEach((el, i) => {
+    el.classList.remove('prev', 'active', 'next');
+    if (i === prevIdx) el.classList.add('prev');
+    else if (i === idx) el.classList.add('active');
+    else if (i === nextIdx) el.classList.add('next');
+  });
+};
+
 
   const next = () => {
     idx = (idx + 1) % items.length;   // closed loop

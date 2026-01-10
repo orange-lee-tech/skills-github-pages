@@ -214,3 +214,57 @@ section .main-body{
   box-shadow: 0 14px 30px rgba(0,0,0,.18);
   margin: 0 auto;   /* 居中 */
 }
+/* ===== SHOW: stacked 3-item carousel (prev / active / next) ===== */
+#show-track{
+  position: relative;
+  min-height: 360px;  /* 给绝对定位留高度 */
+}
+
+#show-track .carousel-item-single{
+  display: none;
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: transform .28s ease, opacity .28s ease;
+}
+
+/* 三张可见 */
+#show-track .carousel-item-single.prev,
+#show-track .carousel-item-single.active,
+#show-track .carousel-item-single.next{
+  display: block;
+}
+
+/* 主图在最上层 */
+#show-track .carousel-item-single.active{
+  z-index: 3;
+  opacity: 1;
+  transform: translateX(-50%) scale(1);
+}
+
+/* 左右“预告图”在后面、更小、略透明，并且左右偏移 */
+#show-track .carousel-item-single.prev{
+  z-index: 2;
+  opacity: .55;
+  transform: translateX(calc(-50% - 260px)) scale(.82);
+}
+
+#show-track .carousel-item-single.next{
+  z-index: 2;
+  opacity: .55;
+  transform: translateX(calc(-50% + 260px)) scale(.82);
+}
+
+/* 图片本体：不锁死宽度，只给一个上限更稳 */
+#show-track .carousel-item-single img{
+  display: block;
+  max-width: min(900px, 92vw);  /* 尊重原图宽高比例，给上限防止过大 */
+  max-height: 340px;            /* 让布局稳定，不会一张竖图把页面撑爆 */
+  width: auto;
+  height: auto;
+  border-radius: 18px;
+  box-shadow: 0 14px 30px rgba(0,0,0,.18);
+  margin: 0 auto;
+  object-fit: contain;          /* 尊重原图，不裁切 */
+}
