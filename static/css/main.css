@@ -219,3 +219,24 @@ section .main-body{
     background-size: cover !important;
   }
 }
+/* ===== 手机端：确保轮播箭头可点击（防遮挡） ===== */
+@media (max-width: 991px){
+  /* 给轮播容器建立层叠上下文 */
+  .carousel-row{
+    position: relative;
+    z-index: 1;
+  }
+
+  /* 箭头按钮置顶，确保在图片之上 */
+  .carousel-btn{
+    position: relative;
+    z-index: 9999;
+    pointer-events: auto;
+  }
+
+  /* 图片层降低点击优先级，避免挡住按钮 */
+  #show-track .carousel-item-single,
+  #show-track .carousel-item-single img{
+    pointer-events: none;
+  }
+}
