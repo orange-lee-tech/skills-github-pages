@@ -192,3 +192,25 @@ section .main-body{
 #show-track .carousel-item.active{
   display: block !important;
 }
+/* ===== Single-item carousel (SHOW) ===== */
+#show-track{
+  display: block !important;   /* 覆盖之前的 flex 滚动方案 */
+  min-height: 220px;
+}
+
+#show-track .carousel-item-single{
+  display: none;
+}
+
+#show-track .carousel-item-single.active{
+  display: block;
+}
+
+#show-track .carousel-item-single img{
+  width: min(820px, 92vw);
+  height: 320px;
+  object-fit: cover;
+  border-radius: 18px;
+  box-shadow: 0 14px 30px rgba(0,0,0,.18);
+  margin: 0 auto;   /* 居中 */
+}

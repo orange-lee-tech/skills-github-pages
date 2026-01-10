@@ -2,6 +2,63 @@ const content_dir = 'contents/'
 const config_file = 'config.yml'
 const section_names = ['home', 'awards', 'experience', 'publications'];
 
+function initCarouselSingle({ trackId, imgDir, files, intervalMs }) {
+  const track = document.getElementById(trackId);
+  if (!track) {
+    console.error('[carousel] missing track element:', trackId);
+    return;
+  }
+  if (!files || files.length === 0) {
+    console.error('[carousel] empty files for:', trackId, files);
+    return;
+  }
+
+  // Build items once
+  track.innerHTML = files.map(f => `
+    <div class="carousel-item-single">
+      <img src="${imgDir}${encodeURIComponent(f)}" alt="">
+    </div>
+  `).join('');
+
+  const items = Array.from(track.querySelectorAll('.carousel-item-single'));
+  let idx = 0;
+
+  const render = () => {
+    items.forEach((el, i) => el.classList.toggle('active', i === idx));
+  };
+
+  const next = () => {
+    idx = (idx + 1) % items.length;   // closed loop
+    render();
+  };
+
+  const prev = () => {
+    idx = (idx - 1 + items.length) % items.length; // closed loop
+    render();
+  };
+
+  // Initial render
+  render();
+
+  // Buttons (closed loop)
+  document.querySelectorAll(`.carousel-btn[data-target="${trackId}"]`).forEach(btn => {
+    btn.addEventListener('click', () => {
+      if (btn.getAttribute('data-action') === 'prev') prev();
+      else next();
+    });
+  });
+
+  // Auto slide (optional)
+  let timer = null;
+  if (intervalMs && intervalMs > 0) {
+    timer = setInterval(next, intervalMs);
+
+    // Pause on hover (desktop friendly)
+    track.addEventListener('mouseenter', () => timer && clearInterval(timer));
+    track.addEventListener('mouseleave', () => timer = setInterval(next, intervalMs));
+  }
+}
+
 
 function initCarousel({ trackId, imgDir, files, intervalMs }) {
     const track = document.getElementById(trackId);
@@ -93,12 +150,13 @@ window.addEventListener('DOMContentLoaded', event => {
             })
             console.log('[yml] show-images =', yml['show-images']);
             // --- Render Show carousel ---
-            initCarousel({
-                trackId: 'show-track',
-                imgDir: 'static/assets/show/',
-                files: yml['show-images'] || [],
-                intervalMs: 2500
-            });
+            initCarouselSingle({
+  trackId: 'show-track',
+  imgDir: 'static/assets/show/',
+  files: yml['show-images'] || [],
+  intervalMs: 2500   // 想关闭自动轮播就改成 0
+});
+
         })
         .catch(error => console.log(error));
 
