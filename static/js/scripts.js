@@ -5,7 +5,19 @@ const section_names = ['home', 'awards', 'experience', 'publications'];
 
 function initCarousel({ trackId, imgDir, files, intervalMs }) {
     const track = document.getElementById(trackId);
-    if (!track || !files || files.length === 0) return;
+
+    // DEBUG: tell us exactly what's missing
+    if (!track) {
+        console.error('[carousel] missing track element:', trackId);
+        return;
+    }
+    if (!files || files.length === 0) {
+        console.error('[carousel] empty files for:', trackId, files);
+        return;
+    }
+
+    console.log('[carousel] render', trackId, 'count=', files.length, 'dir=', imgDir);
+
 
     // build DOM
     track.innerHTML = files.map(f => `
@@ -79,6 +91,7 @@ window.addEventListener('DOMContentLoaded', event => {
                 }
 
             })
+            console.log('[yml] show-images =', yml['show-images']);
             // --- Render Show carousel ---
             initCarousel({
                 trackId: 'show-track',
